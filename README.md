@@ -1,10 +1,10 @@
-# Good Trouble Safety Main - Build Guide
+# Good Trouble iOS Shortcuts Workflow - Build Guide
 
-This guide walks you through building the Good Trouble Safety Main shortcut step-by-step in the iOS Shortcuts app.
+This guide walks you through building the Good Trouble iOS Shortcuts Workflow shortcut step-by-step in the iOS Shortcuts app.
 
 ## Overview
 
-**Name**: Good Trouble Safety Main
+**Name**: Good Trouble iOS Shortcuts Workflow
 **Purpose**: Emergency alert system that sends GPS location to trusted contacts
 **Complexity**: Intermediate
 **Time to Build**: 15-20 minutes
@@ -55,7 +55,7 @@ These audio files can be played during an emergency encounter to inform others o
 
 1. Open **Shortcuts** app
 2. Tap **+** (top right) to create new shortcut
-3. Tap the shortcut name at top and rename to: **Good Trouble Safety Main**
+3. Tap the shortcut name at top and rename to: **Good Trouble iOS Shortcuts Workflow**
 
 ---
 
@@ -206,7 +206,7 @@ Before configuring this step, you'll need to create a separate shortcut to play 
 
 **Action 9: Run Shortcut (Audio)**
 
-41. Return to the **Good Trouble Safety Main** shortcut
+41. Return to the **Good Trouble iOS Shortcuts Workflow** shortcut
 42. Tap **+**
 43. Search for: **Run Shortcut**
 44. Tap **Run Shortcut**
