@@ -22,6 +22,17 @@ This guide walks you through building the Good Trouble Safety Main shortcut step
 
 ---
 
+## Audio Files Included
+
+This toolkit includes legal rights audio recordings in two languages:
+
+- **English**: `audio/legal_rights_en_complete.mp3`
+- **Spanish**: `audio/legal_rights_es_complete.mp3`
+
+These audio files can be played during an emergency encounter to inform others of your legal rights. You'll configure these in Part 8 of the build instructions below.
+
+---
+
 ## Before You Start
 
 **Prerequisites**:
@@ -34,6 +45,7 @@ This guide walks you through building the Good Trouble Safety Main shortcut step
 - Decide on 1-3 trusted emergency contacts
 - Have their phone numbers ready
 - Choose your emergency alert message text
+- Transfer the audio files to your iPhone (via AirDrop, iCloud Drive, or Files app)
 
 ---
 
@@ -182,14 +194,26 @@ https://maps.apple.com/?ll=XX.XXXX,YY.YYYY
 
 ### Part 8: Optional Legal Rights Audio
 
+**Creating the Audio Playback Shortcut First**:
+
+Before configuring this step, you'll need to create a separate shortcut to play the legal rights audio:
+
+1. Create a new shortcut named **Good Trouble Legal Rights Audio**
+2. Add action: **Get File** → select one of the audio files from your Files app
+   - Choose either `legal_rights_en_complete.mp3` (English) or `legal_rights_es_complete.mp3` (Spanish)
+3. Add action: **Play Sound** → select the file from the previous step
+4. Save the shortcut
+
 **Action 9: Run Shortcut (Audio)**
 
-41. Tap **+**
-42. Search for: **Run Shortcut**
-43. Tap **Run Shortcut**
-44. Configure:
-    - **Shortcut**: Choose **Good Trouble Legal Rights Audio** (after you create it)
-    - Or leave unconfigured for now
+41. Return to the **Good Trouble Safety Main** shortcut
+42. Tap **+**
+43. Search for: **Run Shortcut**
+44. Tap **Run Shortcut**
+45. Configure:
+    - **Shortcut**: Choose **Good Trouble Legal Rights Audio**
+
+> **Bilingual Option**: You can create two audio shortcuts (one for English, one for Spanish) and add an "Ask for Input" action to let users choose their preferred language when the shortcut runs.
 
 ---
 
@@ -220,7 +244,7 @@ Your shortcut should have these actions in order:
 7. **Send Message** → Text message to EmergencyContact1
 8. *(Optional)* Repeat 4-7 for Contact 2 and 3
 9. *(Optional)* **Run Shortcut** → Good Trouble Video Recording
-10. *(Optional)* **Run Shortcut** → Good Trouble Legal Rights Audio
+10. *(Optional)* **Run Shortcut** → Good Trouble Legal Rights Audio (English or Spanish)
 
 ---
 
@@ -327,9 +351,13 @@ Once your shortcut is complete and tested:
 Now that you've built the main shortcut, you can:
 
 1. **Add Video Recording**: Create a simple shortcut that opens the Camera app or records video
-2. **Add Legal Rights Audio**: Import the provided MP3 files and create a shortcut to play them
-3. **Configure Triggers**: Set up automation triggers in iOS (Back Tap, Voice Command, etc.)
+2. **Set Up Audio Playback**: Follow Part 8 instructions to create shortcuts for the English and/or Spanish legal rights audio files
+3. **Configure Triggers**: Set up automation triggers in iOS:
+   - Back Tap (Settings → Accessibility → Touch → Back Tap)
+   - Voice Command ("Hey Siri, Good Trouble")
+   - Home Screen widget for quick access
 4. **Test Thoroughly**: Make sure all contacts receive messages and location links work
+5. **Share**: Help others stay safe by sharing this toolkit (remember to remove personal data first)
 
 ---
 
