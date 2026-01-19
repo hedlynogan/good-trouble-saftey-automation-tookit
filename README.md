@@ -17,8 +17,8 @@ This guide walks you through building the Good Trouble iOS Shortcuts Workflow sh
 1. Gets your current GPS location
 2. Formats an emergency alert message with location
 3. Sends the message to 1-3 trusted contacts via Messages
-4. Optionally launches video recording
-5. Optionally plays legal rights audio
+4. Plays legal rights audio (English or Spanish)
+5. Starts video recording to document the interaction
 
 ---
 
@@ -29,7 +29,7 @@ This toolkit includes legal rights audio recordings in two languages:
 - **English**: `audio/legal_rights_en_complete.mp3`
 - **Spanish**: `audio/legal_rights_es_complete.mp3`
 
-These audio files can be played during an emergency encounter to inform others of your legal rights. You'll configure these in Part 8 of the build instructions below.
+These audio files can be played during an emergency encounter to inform others of your legal rights. You'll configure these in Part 7 of the build instructions below.
 
 ---
 
@@ -174,25 +174,7 @@ https://maps.apple.com/?ll=XX.XXXX,YY.YYYY
 
 ---
 
-### Part 7: Optional Video Recording
-
-**Action 8: Run Shortcut (Video)**
-
-37. Tap **+**
-38. Search for: **Run Shortcut**
-39. Tap **Run Shortcut**
-40. Configure:
-    - **Shortcut**: Will show "Choose" initially. You'll select **Good Trouble Video Recording** after you create that shortcut
-    - For now, you can leave it unconfigured or delete this action if not using video
-
-> **Alternative**: Instead of Run Shortcut, you can use **Open App**:
->   - Search for **Open App**
->   - Select **Camera**
->   - This immediately opens the Camera app
-
----
-
-### Part 8: Optional Legal Rights Audio
+### Part 7: Optional Legal Rights Audio
 
 **Creating the Audio Playback Shortcut First**:
 
@@ -204,16 +186,36 @@ Before configuring this step, you'll need to create a separate shortcut to play 
 3. Add action: **Play Sound** → select the file from the previous step
 4. Save the shortcut
 
-**Action 9: Run Shortcut (Audio)**
+**Action 8: Run Shortcut (Audio)**
 
-41. Return to the **Good Trouble iOS Shortcuts Workflow** shortcut
-42. Tap **+**
-43. Search for: **Run Shortcut**
-44. Tap **Run Shortcut**
-45. Configure:
+37. Return to the **Good Trouble iOS Shortcuts Workflow** shortcut
+38. Tap **+**
+39. Search for: **Run Shortcut**
+40. Tap **Run Shortcut**
+41. Configure:
     - **Shortcut**: Choose **Good Trouble Legal Rights Audio**
 
 > **Bilingual Option**: You can create two audio shortcuts (one for English, one for Spanish) and add an "Ask for Input" action to let users choose their preferred language when the shortcut runs.
+
+---
+
+### Part 8: Start Video Recording
+
+**Action 9: Take Video**
+
+42. Tap **+**
+43. Search for: **Take Video**
+44. Tap **Take Video**
+45. Configure:
+    - **Start Recording**: Immediately
+    - **Show Camera Preview**: Enable (recommended)
+
+> **Alternative**: Instead of Take Video, you can use **Open App**:
+>   - Search for **Open App**
+>   - Select **Camera**
+>   - This immediately opens the Camera app for manual recording
+
+> **Why Video After Audio?** Playing the legal rights audio first informs others of your rights, then video recording documents the interaction.
 
 ---
 
@@ -243,8 +245,8 @@ Your shortcut should have these actions in order:
 6. **Get Variable** → EmergencyContact1
 7. **Send Message** → Text message to EmergencyContact1
 8. *(Optional)* Repeat 4-7 for Contact 2 and 3
-9. *(Optional)* **Run Shortcut** → Good Trouble Video Recording
-10. *(Optional)* **Run Shortcut** → Good Trouble Legal Rights Audio (English or Spanish)
+9. **Run Shortcut** → Good Trouble Legal Rights Audio (English or Spanish)
+10. **Take Video** → Start recording immediately
 
 ---
 
@@ -350,13 +352,13 @@ Once your shortcut is complete and tested:
 
 Now that you've built the main shortcut, you can:
 
-1. **Add Video Recording**: Create a simple shortcut that opens the Camera app or records video
-2. **Set Up Audio Playback**: Follow Part 8 instructions to create shortcuts for the English and/or Spanish legal rights audio files
+1. **Set Up Audio Playback**: Follow Part 7 instructions to create shortcuts for the English and/or Spanish legal rights audio files
+2. **Configure Video Recording**: Set up the Take Video action in Part 8 to automatically document interactions
 3. **Configure Triggers**: Set up automation triggers in iOS:
    - Back Tap (Settings → Accessibility → Touch → Back Tap)
    - Voice Command ("Hey Siri, Good Trouble")
    - Home Screen widget for quick access
-4. **Test Thoroughly**: Make sure all contacts receive messages and location links work
+4. **Test Thoroughly**: Make sure all contacts receive messages, location links work, audio plays correctly, and video recording starts
 5. **Share**: Help others stay safe by sharing this toolkit (remember to remove personal data first)
 
 ---
