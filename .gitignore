@@ -38,3 +38,9 @@ Temporary Items
 # Personal data
 contacts.txt
 emergency-contacts.txt
+
+# Python
+python/output/
+python/.venv/
+__pycache__/
+*.pyc
