@@ -46,6 +46,8 @@ When triggered, the automation workflow:
 
 **Documentation:** See `doc/android/` for detailed setup guides.
 
+> **Note:** Unlike iOS, Android does not have a built-in automation app. Complex workflows require third-party apps like Tasker. See `tasker/README.md` for alternatives including MacroDroid and Automate.
+
 ---
 
 ## Audio Files Included

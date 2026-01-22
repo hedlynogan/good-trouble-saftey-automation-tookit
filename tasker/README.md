@@ -8,6 +8,20 @@ This directory contains importable Tasker task files for Android users.
 - [Tasker app](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) (paid app)
 - Required permissions granted (see below)
 
+## Why a Third-Party App?
+
+Unlike iOS, which has the built-in Shortcuts app, Android does not include a native automation tool capable of chaining actions like GPS location, SMS, audio playback, and video recording. As of Android 16, Google still has not released an iOS Shortcuts equivalent.
+
+**Tasker** is the most powerful and flexible automation app for Android, which is why this toolkit uses it. However, there are alternatives:
+
+| App | Price | Pros | Cons |
+|-----|-------|------|------|
+| [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) | ~$3.49 | Most powerful, deep system access | Steeper learning curve |
+| [MacroDroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid) | Free (with limits) | Easier UI, good for beginners | Some features require pro |
+| [Automate](https://play.google.com/store/apps/details?id=com.llamalab.automate) | Free (with limits) | Visual flowchart builder | Can be complex for advanced flows |
+
+The task files in this directory are for Tasker. Community contributions for MacroDroid or Automate configurations are welcome.
+
 ## Files Included
 
 | File | Description |
