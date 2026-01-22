@@ -16,6 +16,7 @@ Make the Good Trouble Safety Automation Toolkit accessible to everyone, regardle
 - [x] Claude Code configuration
 - [x] Cross-platform directory structure (doc/ios, doc/android, tasker)
 - [x] Tasker task files for Android
+- [x] Python TTS audio generation tools
 
 ---
 
@@ -66,9 +67,42 @@ Add Tasker-based workflow for Android users.
 
 ---
 
-## Phase 3: Additional Languages
+## Phase 3: TTS Audio Generation Tools (Complete)
 
-Expand audio support beyond English and Spanish.
+Python-based text-to-speech tooling for generating legal rights audio files.
+
+### Deliverables
+- [x] Python TTS script for audio generation
+- [x] Script documentation and usage guide
+- [x] Text templates for legal rights scripts (English, Spanish)
+- [x] Audio post-processing (segment combining via pydub)
+
+### Directory Structure
+```
+python/
+├── tts/
+│   └── text_to_speech.py   # Main TTS generation script
+├── scripts/
+│   ├── legal_rights_en.txt # English text template
+│   └── legal_rights_es.txt # Spanish text template
+├── requirements.txt        # Python dependencies
+├── README.md               # Full documentation
+├── QUICKSTART.md           # Quick start guide
+└── demo.sh                 # Demo script
+```
+
+### Features
+- Support for multiple TTS engines (gTTS online, pyttsx3 offline)
+- Batch generation for multiple languages
+- Configurable speech rate and language settings
+- Segment combining with configurable pauses
+- Output in MP3 format for cross-platform compatibility
+
+---
+
+## Phase 4: Additional Languages
+
+Expand audio support beyond English and Spanish using TTS tools.
 
 ### Potential Languages
 - [ ] French
@@ -80,12 +114,13 @@ Expand audio support beyond English and Spanish.
 
 ### Requirements per Language
 - Accurate legal rights information for relevant jurisdictions
-- Native speaker recording
-- Legal review where possible
+- Text template reviewed by someone familiar with local laws
+- TTS generation or native speaker recording
+- Quality review of generated audio
 
 ---
 
-## Phase 4: Distribution
+## Phase 5: Distribution
 
 Make the toolkit easy to install and share.
 
@@ -98,7 +133,7 @@ Make the toolkit easy to install and share.
 
 ---
 
-## Phase 5: Enhancements
+## Phase 6: Enhancements
 
 Future feature ideas (community-driven).
 

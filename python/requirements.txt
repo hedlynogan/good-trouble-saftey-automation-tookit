@@ -1,0 +1,15 @@
+# Python TTS Requirements
+# Install with: pip install -r requirements.txt
+
+# Offline TTS engine (works without internet)
+pyttsx3>=2.90
+
+# Online TTS engine (requires internet, higher quality)
+gTTS>=2.5.0
+
+# Audio file manipulation
+pydub>=0.25.1
+
+# Optional: Advanced audio processing
+# soundfile>=0.12.1
+# numpy>=1.24.0

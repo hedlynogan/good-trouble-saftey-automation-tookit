@@ -1,0 +1,27 @@
+# Legal Rights Audio Script - Spanish / Derechos Legales
+# Cada línea se convertirá en un segmento de audio separado
+
+# Introducción
+Este es un recordatorio de seguridad sobre sus derechos legales.
+
+# Derechos Fundamentales
+Usted tiene el derecho de permanecer en silencio.
+
+Usted tiene el derecho de negarse a responder preguntas.
+
+Usted tiene el derecho de preguntar si es libre de irse.
+
+Usted tiene el derecho a un abogado.
+
+No tiene que dar consentimiento para una búsqueda.
+
+No tiene que firmar nada sin un abogado.
+
+# Recordatorios de Seguridad
+Manténgase calmado y respetuoso.
+
+Mantenga sus manos visibles.
+
+No se resista ni discuta.
+
+Pida números de placa y nombres.

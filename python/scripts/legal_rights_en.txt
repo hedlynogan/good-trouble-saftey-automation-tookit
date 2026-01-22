@@ -1,0 +1,27 @@
+# Legal Rights Audio Script - English
+# Each line will be converted to a separate audio segment
+
+# Introduction
+This is a safety reminder about your legal rights.
+
+# Core Rights
+You have the right to remain silent.
+
+You have the right to refuse to answer questions.
+
+You have the right to ask if you are free to leave.
+
+You have the right to a lawyer.
+
+You do not have to consent to a search.
+
+You do not have to sign anything without a lawyer.
+
+# Safety Reminders
+Stay calm and respectful.
+
+Keep your hands visible.
+
+Do not resist or argue.
+
+Ask for badge numbers and names.

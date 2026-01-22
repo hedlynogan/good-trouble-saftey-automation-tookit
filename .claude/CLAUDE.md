@@ -12,6 +12,7 @@ This is a cross-platform emergency alert toolkit designed to help people stay sa
 - Documentation for building automation workflows
 - Pre-recorded legal rights audio files
 - Importable Tasker task files for Android
+- Python TTS tools for generating audio files
 - Community and contribution guidelines
 
 ## Purpose
@@ -35,6 +36,11 @@ The automation workflow performs these actions when triggered:
 ├── doc/
 │   ├── ios/            # iOS Shortcuts guides (PDF/Word)
 │   └── android/        # Tasker guides (PDF/Word)
+├── python/             # Python TTS audio generation tools
+│   ├── tts/            # TTS conversion scripts
+│   ├── scripts/        # Text templates for audio generation
+│   ├── requirements.txt
+│   └── README.md
 ├── tasker/             # Importable Tasker files
 │   ├── GoodTrouble_Main.tsk.xml
 │   ├── GoodTrouble_Audio.tsk.xml
@@ -55,6 +61,9 @@ The automation workflow performs these actions when triggered:
 | `doc/android/` | Tasker setup guides with screenshots |
 | `tasker/*.tsk.xml` | Importable Tasker task files |
 | `tasker/README.md` | Tasker import instructions |
+| `python/tts/text_to_speech.py` | TTS audio generation script |
+| `python/scripts/*.txt` | Text templates for audio generation |
+| `python/README.md` | TTS tool documentation |
 | `audio/legal_rights_en_complete.mp3` | English legal rights audio |
 | `audio/legal_rights_es_complete.mp3` | Spanish legal rights audio |
 | `SECURITY.md` | Privacy considerations for both platforms |
@@ -94,6 +103,13 @@ The automation workflow performs these actions when triggered:
 - Use descriptive names prefixed with `GoodTrouble_`
 - Include comments in XML for clarity
 - Test exports before committing
+
+### Python TTS Conventions
+- Text templates: `python/scripts/legal_rights_[lang_code].txt`
+- One statement per line in text templates
+- Comments start with `#` and are ignored
+- Output audio format: MP3
+- Support both gTTS (online) and pyttsx3 (offline) engines
 
 ## Platform-Specific Notes
 
