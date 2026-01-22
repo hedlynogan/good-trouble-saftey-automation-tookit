@@ -1,0 +1,98 @@
+<TaskerData sr="" dession="1" tv="6.2.5">
+	<Task sr="task2">
+		<cdate>1705900000000</cdate>
+		<edate>1705900000000</edate>
+		<id>2</id>
+		<nme>Good Trouble Audio</nme>
+		<pri>100</pri>
+
+		<!-- Action 1: Set Volume to Maximum -->
+		<Action sr="act0" ve="7">
+			<code>311</code>
+			<label>Set Media Volume to Max</label>
+			<Int sr="arg0" val="3"/>
+			<Int sr="arg1" val="15"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+
+		<!-- Action 2: Variable Set - Default to English -->
+		<!-- Change to "es" for Spanish, or use a global variable -->
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<label>Set Language (en or es)</label>
+			<Str sr="arg0" ve="3">%AudioLang</Str>
+			<Str sr="arg1" ve="3">en</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+		</Action>
+
+		<!-- Action 3: Set Audio File Path -->
+		<!-- NOTE: Update this path to match where you store the audio files -->
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<label>Set Audio File Path</label>
+			<Str sr="arg0" ve="3">%AudioPath</Str>
+			<Str sr="arg1" ve="3">/sdcard/GoodTrouble/audio/legal_rights_%AudioLang_complete.mp3</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+		</Action>
+
+		<!-- Action 4: Test if File Exists -->
+		<Action sr="act3" ve="7">
+			<code>339</code>
+			<label>Test if Audio File Exists</label>
+			<Int sr="arg0" val="2"/>
+			<Str sr="arg1" ve="3">%AudioPath</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+
+		<!-- Action 5: If File Exists - Play Audio -->
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<label>If Audio File Found</label>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%err</lhs>
+					<op>12</op>
+				</Condition>
+			</ConditionList>
+		</Action>
+
+		<!-- Action 6: Play Audio File -->
+		<Action sr="act5" ve="7">
+			<code>15</code>
+			<label>Play Legal Rights Audio</label>
+			<Str sr="arg0" ve="3">%AudioPath</Str>
+			<Int sr="arg1" val="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+
+		<!-- Action 7: Else - Flash Error -->
+		<Action sr="act6" ve="7">
+			<code>38</code>
+			<label>Else</label>
+		</Action>
+
+		<!-- Action 8: Flash File Not Found Message -->
+		<Action sr="act7" ve="7">
+			<code>548</code>
+			<label>Flash Audio Error</label>
+			<Str sr="arg0" ve="3">Audio file not found at %AudioPath. Please check the file location.</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+
+		<!-- Action 9: End If -->
+		<Action sr="act8" ve="7">
+			<code>39</code>
+			<label>End If</label>
+		</Action>
+
+	</Task>
+</TaskerData>
