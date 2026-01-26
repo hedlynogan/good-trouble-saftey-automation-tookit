@@ -10,10 +10,18 @@ This test plan ensures the Good Trouble Safety Automation Toolkit is reliable, u
 
 ## Test Environment Requirements
 
-### iOS Testing
+### Mac Desktop Testing (Primary Development Platform)
+- **Required Hardware**: Mac running macOS 13.0 (Ventura) or later
+- **Required Apps**: Shortcuts app (built-in), iCloud enabled
+- **Test Accounts**: Valid emergency contact phone numbers/email addresses, iCloud account
+- **Permissions**: Location Services, Contacts, Files & Folders
+- **Network Conditions**: WiFi, Ethernet, offline mode
+- **Apple Intelligence**: Requires macOS 14.0+ and compatible Mac for full AI features
+
+### iOS Testing (Deployment Platform)
 - **Required Devices**: iPhone running iOS 15.0+ (test on multiple iOS versions if possible)
-- **Required Apps**: Shortcuts app (built-in)
-- **Test Accounts**: Valid emergency contact phone numbers/email addresses
+- **Required Apps**: Shortcuts app (built-in), iCloud sync enabled
+- **Test Accounts**: Same iCloud account as Mac, valid emergency contacts
 - **Permissions**: Location, Notifications, Camera, Microphone
 - **Network Conditions**: WiFi, Cellular (4G/5G), Airplane mode
 
@@ -32,20 +40,124 @@ This test plan ensures the Good Trouble Safety Automation Toolkit is reliable, u
 
 ---
 
-## Phase 1: iOS Shortcuts Testing
+## Phase 0: Mac Desktop Shortcut Creation Testing
 
-### 1.1 Documentation Testing
-**Objective**: Verify iOS documentation is complete and followable
+### 0.1 Mac Desktop Environment Setup
+**Objective**: Verify Mac Desktop prerequisites and iCloud configuration
 
 | Test ID | Test Case | Steps | Expected Result | Pass/Fail |
 |---------|-----------|-------|-----------------|-----------|
-| IOS-DOC-001 | Follow PDF guide from start to finish | Use PDF guide to build shortcut from scratch | Shortcut builds successfully without errors | |
-| IOS-DOC-002 | Verify all screenshots are clear | Review each screenshot in documentation | Screenshots match current iOS version UI | |
-| IOS-DOC-003 | Test troubleshooting section | Intentionally create common errors | Troubleshooting guide resolves issues | |
-| IOS-DOC-004 | Non-technical user test | Have non-technical user follow guide | User completes setup independently | |
+| MAC-ENV-001 | macOS version check | Verify macOS version | macOS 13.0 (Ventura) or later | |
+| MAC-ENV-002 | Shortcuts app availability | Open Shortcuts app | App launches successfully | |
+| MAC-ENV-003 | iCloud account setup | Check iCloud settings | iCloud logged in and active | |
+| MAC-ENV-004 | Shortcuts sync enabled | Check iCloud > Shortcuts | Shortcuts sync is enabled | |
+| MAC-ENV-005 | Apple Intelligence availability | Check macOS version and Mac model | Apple Intelligence features available (macOS 14.0+) | |
+| MAC-ENV-006 | Location Services enabled | Check System Settings > Privacy | Location Services enabled for Shortcuts | |
 
-### 1.2 Shortcut Functional Testing
-**Objective**: Verify all shortcut components work correctly
+### 0.2 Mac Desktop Documentation Testing
+**Objective**: Verify Mac Desktop documentation is complete and followable
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| MAC-DOC-001 | Follow Mac PDF guide from start | Use doc/mac/ guide to build shortcut | Shortcut builds successfully | |
+| MAC-DOC-002 | Verify all screenshots are clear | Review each screenshot in documentation | Screenshots match current macOS version | |
+| MAC-DOC-003 | Apple Intelligence feature docs | Review AI feature documentation | Clear instructions for Using Model, Writing Tools, Create Image | |
+| MAC-DOC-004 | iCloud sync documentation | Follow iCloud sync setup guide | iCloud sync configured correctly | |
+| MAC-DOC-005 | Non-technical user test | Have non-technical user follow Mac guide | User completes setup independently | |
+
+### 0.3 Mac Desktop Shortcut Building
+**Objective**: Verify shortcut can be built successfully on Mac
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| MAC-BUILD-001 | Create new shortcut | Follow creation steps in Shortcuts app | New shortcut created | |
+| MAC-BUILD-002 | Add location action | Add "Get Current Location" action | Action added and configured | |
+| MAC-BUILD-003 | Format location data | Add formatting actions | Location formatted correctly | |
+| MAC-BUILD-004 | Create message template | Build emergency message | Message template created | |
+| MAC-BUILD-005 | Configure contacts | Add contact selection/input | Contacts configured | |
+| MAC-BUILD-006 | Add messaging actions | Add Send Message actions | Actions configured for SMS/Email | |
+| MAC-BUILD-007 | Add audio playback | Configure audio file playback | Audio action added | |
+| MAC-BUILD-008 | Add video recording trigger | Configure camera/recording action | Video action configured | |
+| MAC-BUILD-009 | Save shortcut | Save with descriptive name | Shortcut saved successfully | |
+
+### 0.4 Apple Intelligence Features Testing
+**Objective**: Verify Apple Intelligence features enhance shortcut development
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| MAC-AI-001 | Use Model for message optimization | Use "Use Model" to improve emergency message | AI suggests improved message text | |
+| MAC-AI-002 | Writing Tools for message refinement | Apply Writing Tools to message template | Message refined with better clarity | |
+| MAC-AI-003 | Create Image for documentation | Use Create Image to generate guide graphics | Image generated successfully | |
+| MAC-AI-004 | Model for shortcut logic | Use AI to optimize action sequence | AI suggests logic improvements | |
+| MAC-AI-005 | Multiple languages with AI | Use AI to generate multilingual messages | Messages created in multiple languages | |
+
+### 0.5 Mac Desktop Shortcut Testing
+**Objective**: Test shortcut functionality on Mac before iOS deployment
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| MAC-TEST-001 | Run shortcut on Mac | Trigger shortcut from Mac Shortcuts app | Shortcut executes without errors | |
+| MAC-TEST-002 | Location retrieval on Mac | Check location data captured | Mac location retrieved (if available) | |
+| MAC-TEST-003 | Message formatting | Review generated message | Message properly formatted | |
+| MAC-TEST-004 | Contact notification test | Send test message from Mac | Message sent successfully | |
+| MAC-TEST-005 | Audio playback on Mac | Play legal rights audio | Audio plays on Mac speakers | |
+| MAC-TEST-006 | Debug mode testing | Use Mac debugging features | Can step through shortcut actions | |
+| MAC-TEST-007 | Error handling | Introduce test errors | Errors display clearly on Mac | |
+| MAC-TEST-008 | Variable inspection | Check variables during execution | Variables visible and correct | |
+
+### 0.6 iCloud Sync Testing
+**Objective**: Verify shortcut syncs from Mac to iOS devices
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| MAC-SYNC-001 | Initial sync to iOS | Save shortcut on Mac, check iPhone | Shortcut appears on iPhone within 5 minutes | |
+| MAC-SYNC-002 | Update sync | Modify shortcut on Mac, check iPhone | Changes sync to iPhone | |
+| MAC-SYNC-003 | Sync status verification | Check sync indicator in Shortcuts app | Sync status shows "Up to date" | |
+| MAC-SYNC-004 | Multiple iOS devices | Sync to multiple iPhones/iPads | Shortcut appears on all devices | |
+| MAC-SYNC-005 | Sync conflict resolution | Edit on both Mac and iPhone | Conflict resolved correctly | |
+| MAC-SYNC-006 | Offline sync | Make changes offline, go online | Changes sync when connected | |
+| MAC-SYNC-007 | Large shortcut sync | Create complex shortcut (50+ actions) | Large shortcut syncs successfully | |
+| MAC-SYNC-008 | Audio file sync | Verify audio files sync with shortcut | Audio files available on iOS | |
+
+### 0.7 Mac-Specific Performance Testing
+**Objective**: Verify Mac Desktop development performance
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| MAC-PERF-001 | Shortcuts app launch time | Measure app launch | Launches in <3 seconds | |
+| MAC-PERF-002 | Shortcut save time | Measure save operation | Saves in <2 seconds | |
+| MAC-PERF-003 | iCloud sync time | Measure Mac to iOS sync | Syncs in <5 minutes | |
+| MAC-PERF-004 | Apple Intelligence response time | Measure AI feature response | Responds in <10 seconds | |
+| MAC-PERF-005 | Large shortcut editing | Edit 100+ action shortcut | Remains responsive | |
+
+---
+
+## Phase 1: iOS Deployment & Trigger Testing
+
+### 1.1 iOS Sync Verification
+**Objective**: Verify shortcuts synced from Mac appear correctly on iOS
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| IOS-SYNC-001 | Shortcut appears in app | Open Shortcuts app on iPhone | Shortcut from Mac is visible | |
+| IOS-SYNC-002 | Shortcut metadata intact | Check shortcut name, icon, details | All metadata synced correctly | |
+| IOS-SYNC-003 | Actions preserved | Open and review shortcut | All actions from Mac present | |
+| IOS-SYNC-004 | Audio files accessible | Check audio file references | Audio files accessible on iPhone | |
+| IOS-SYNC-005 | Contact references | Check contact configuration | Contacts configured correctly | |
+
+### 1.2 iOS Documentation Testing
+**Objective**: Verify iOS deployment and trigger documentation is complete and followable
+
+| Test ID | Test Case | Steps | Expected Result | Pass/Fail |
+|---------|-----------|-------|-----------------|-----------|
+| IOS-DOC-001 | Follow sync verification guide | Use doc/ios/ to verify synced shortcut | Shortcut verified successfully on iOS | |
+| IOS-DOC-002 | Follow trigger setup guide | Configure iOS triggers per documentation | Triggers configured successfully | |
+| IOS-DOC-003 | Verify all screenshots are clear | Review each screenshot in documentation | Screenshots match current iOS version UI | |
+| IOS-DOC-004 | Test troubleshooting section | Intentionally create common errors | Troubleshooting guide resolves issues | |
+| IOS-DOC-005 | Non-technical user test | Have non-technical user follow deployment guide | User completes deployment independently | |
+
+### 1.3 iOS Shortcut Functional Testing
+**Objective**: Verify all shortcut components work correctly on iOS device (synced from Mac)
 
 | Test ID | Test Case | Steps | Expected Result | Pass/Fail |
 |---------|-----------|-------|-----------------|-----------|
@@ -59,17 +171,21 @@ This test plan ensures the Good Trouble Safety Automation Toolkit is reliable, u
 | IOS-FUNC-008 | Video recording start | Check video recording | Recording starts automatically after audio | |
 | IOS-FUNC-009 | Video recording save | Verify saved video | Video saved to Photos app correctly | |
 | IOS-FUNC-010 | Multiple triggers in sequence | Trigger shortcut 3 times rapidly | Each trigger completes without interference | |
+| IOS-FUNC-011 | Verify Mac-built logic works on iOS | Compare behavior to Mac testing | Identical behavior on iOS | |
 
-### 1.3 Permission Testing
-**Objective**: Verify permission handling
+### 1.4 iOS Permission Testing
+**Objective**: Verify iOS permission handling for synced shortcut
 
 | Test ID | Test Case | Steps | Expected Result | Pass/Fail |
 |---------|-----------|-------|-----------------|-----------|
-| IOS-PERM-001 | Location permission denied | Deny location access | Shortcut prompts for permission or fails gracefully | |
-| IOS-PERM-002 | Camera permission denied | Deny camera access | Video recording fails gracefully with notification | |
-| IOS-PERM-003 | Contacts permission denied | Deny contacts access | Manual contact entry still works | |
+| IOS-PERM-001 | Location permission prompt | First run on iOS | Shortcut prompts for location access | |
+| IOS-PERM-002 | Location permission denied | Deny location access | Shortcut prompts for permission or fails gracefully | |
+| IOS-PERM-003 | Camera permission prompt | First video recording attempt | Prompts for camera access | |
+| IOS-PERM-004 | Camera permission denied | Deny camera access | Video recording fails gracefully with notification | |
+| IOS-PERM-005 | Contacts permission denied | Deny contacts access | Manual contact entry still works | |
+| IOS-PERM-006 | All permissions granted | Grant all required permissions | Shortcut executes fully | |
 
-### 1.4 Trigger Method Testing
+### 1.5 iOS Trigger Method Testing
 **Objective**: Verify various activation methods
 
 | Test ID | Test Case | Steps | Expected Result | Pass/Fail |
@@ -402,14 +518,17 @@ For each language (French, Mandarin, Arabic, Portuguese, Vietnamese, Korean):
 ## Sign-Off Requirements
 
 Before releasing any phase:
-- [ ] All P0 tests passing on iOS and Android
+- [ ] All P0 tests passing on Mac Desktop, iOS, and Android
 - [ ] All P1 tests passing on primary target OS versions
+- [ ] Mac Desktop shortcut creation verified
+- [ ] iCloud sync from Mac to iOS verified working
 - [ ] Documentation reviewed and tested by non-technical user
 - [ ] Privacy/security review completed
-- [ ] At least 3 different devices tested per platform
+- [ ] At least 3 different devices tested per platform (Mac models, iPhone models, Android devices)
+- [ ] Apple Intelligence features tested on compatible Macs
 - [ ] Emergency contact notification verified working
 - [ ] Video recording verified working
-- [ ] Audio playback verified working
+- [ ] Audio playback verified working on all platforms
 
 ---
 

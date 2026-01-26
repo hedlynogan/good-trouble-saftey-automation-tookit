@@ -20,29 +20,64 @@ Make the Good Trouble Safety Automation Toolkit accessible to everyone, regardle
 
 ---
 
-## Phase 1: iOS Documentation
+## Phase 1: Mac Desktop Shortcut Creation
 
-Create step-by-step build guides with screenshots in `doc/ios/`.
+Create step-by-step build guides with screenshots in `doc/mac/` for building shortcuts on Mac Desktop that sync to iOS via iCloud.
+
+### Why Mac Desktop First?
+- **Better development experience**: Full keyboard, larger screen, easier debugging
+- **Apple Intelligence**: Leverage AI to optimize emergency messages and shortcut logic
+- **Writing Tools**: Refine message templates with built-in AI writing assistance
+- **Create Image**: Generate visual guides, QR codes, or diagrams
+- **Use Model**: Access AI models to improve shortcut functionality
+- **iCloud sync**: Build once on Mac, automatically available on iPhone/iPad
+- **Testing**: Test shortcut logic on Mac before deploying to iOS devices
 
 ### Deliverables
-- [ ] PDF guide with screenshots for building the main shortcut
+- [ ] Mac Desktop prerequisites guide (macOS version, iCloud setup)
+- [ ] PDF guide with screenshots for building the main shortcut on Mac
 - [ ] Word document version (editable)
-- [ ] PDF guide for audio playback shortcut setup
-- [ ] Screenshots for each step of the shortcut build process
+- [ ] Guide for leveraging Apple Intelligence features during development
+- [ ] iCloud sync configuration guide
+- [ ] Screenshots for each step of the Mac Shortcuts app build process
+- [ ] Mac testing procedures before iOS deployment
 
 ### Content Outline
-1. Introduction and prerequisites
-2. Part 1: Create new shortcut
-3. Part 2: Get current location
-4. Part 3: Format location for sharing
-5. Part 4: Create emergency message
-6. Part 5: Configure emergency contacts
-7. Part 6: Send messages
-8. Part 7: Audio playback setup
-9. Part 8: Video recording
-10. Part 9: Final configuration and triggers
-11. Testing guide
-12. Troubleshooting
+1. Introduction and Mac Desktop prerequisites
+2. Setting up iCloud sync for Shortcuts
+3. Part 1: Create new shortcut in Mac Shortcuts app
+4. Part 2: Get current location (testing on Mac)
+5. Part 3: Format location for sharing
+6. Part 4: Create emergency message with Apple Intelligence
+7. Part 5: Configure emergency contacts
+8. Part 6: Send messages (SMS/Email configuration)
+9. Part 7: Audio playback setup and file management
+10. Part 8: Video recording configuration
+11. Part 9: Using Writing Tools to refine messages
+12. Part 10: Testing shortcut on Mac
+13. Part 11: iCloud sync verification
+14. Troubleshooting Mac-specific issues
+
+---
+
+## Phase 1.5: iOS Deployment & Usage
+
+Document how to access synced shortcuts on iOS devices and configure iOS-specific triggers.
+
+### Deliverables
+- [ ] PDF guide for accessing iCloud-synced shortcuts on iPhone
+- [ ] Word document version (editable)
+- [ ] iOS trigger setup instructions (Siri, back tap, widget, etc.)
+- [ ] iOS testing procedures
+- [ ] iOS-specific troubleshooting
+
+### Content Outline
+1. Verifying shortcut synced via iCloud
+2. Setting up iOS triggers (Siri, Back Tap, Widget, Automation)
+3. Configuring iOS permissions (Location, Camera, Contacts)
+4. Testing on iOS device
+5. iOS-specific limitations and considerations
+6. Troubleshooting sync issues
 
 ---
 

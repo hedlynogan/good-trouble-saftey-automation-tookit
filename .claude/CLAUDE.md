@@ -5,11 +5,13 @@
 This is a cross-platform emergency alert toolkit designed to help people stay safe during encounters. The toolkit enables users to quickly notify trusted contacts of their location and document interactions.
 
 **Supported Platforms:**
-- iOS (using Shortcuts)
-- Android (using Tasker)
+- **Mac Desktop** (primary development platform - Shortcuts app with Apple Intelligence)
+- **iOS** (deployment platform via iCloud sync)
+- **Android** (using Tasker)
 
 **This is NOT a traditional software project** - it consists of:
-- Documentation for building automation workflows
+- Documentation for building automation workflows on Mac Desktop
+- iOS deployment and trigger configuration guides
 - Pre-recorded legal rights audio files
 - Importable Tasker task files for Android
 - Python TTS tools for generating audio files
@@ -34,7 +36,8 @@ The automation workflow performs these actions when triggered:
 │   └── ISSUE_TEMPLATE/ # GitHub issue templates
 ├── audio/              # Shared legal rights audio files (MP3)
 ├── doc/
-│   ├── ios/            # iOS Shortcuts guides (PDF/Word)
+│   ├── mac/            # Mac Desktop shortcut creation guides (PRIMARY)
+│   ├── ios/            # iOS deployment and trigger setup guides
 │   └── android/        # Tasker guides (PDF/Word)
 ├── python/             # Python TTS audio generation tools
 │   ├── tts/            # TTS conversion scripts
@@ -49,7 +52,8 @@ The automation workflow performs these actions when triggered:
 ├── CONTRIBUTING.md     # Contribution guidelines
 ├── LICENSE             # Project license
 ├── README.md           # Project overview
-└── SECURITY.md         # Security policy and data handling
+├── SECURITY.md         # Security policy and data handling
+└── TEST_PLAN.md        # Comprehensive testing procedures
 ```
 
 ## Key Files
@@ -57,7 +61,8 @@ The automation workflow performs these actions when triggered:
 | File | Purpose |
 |------|---------|
 | `README.md` | Project overview, prerequisites, and pointer to documentation |
-| `doc/ios/` | iOS Shortcuts build instructions with screenshots |
+| `doc/mac/` | Mac Desktop shortcut creation guides (PRIMARY PLATFORM) |
+| `doc/ios/` | iOS deployment, trigger setup, and usage guides |
 | `doc/android/` | Tasker setup guides with screenshots |
 | `tasker/*.tsk.xml` | Importable Tasker task files |
 | `tasker/README.md` | Tasker import instructions |
@@ -66,7 +71,8 @@ The automation workflow performs these actions when triggered:
 | `python/README.md` | TTS tool documentation |
 | `audio/legal_rights_en_complete.mp3` | English legal rights audio |
 | `audio/legal_rights_es_complete.mp3` | Spanish legal rights audio |
-| `SECURITY.md` | Privacy considerations for both platforms |
+| `SECURITY.md` | Privacy considerations for all platforms |
+| `TEST_PLAN.md` | Comprehensive test plan for all platforms |
 
 ## Guidelines for AI Assistants
 
@@ -77,12 +83,15 @@ The automation workflow performs these actions when triggered:
 - Remember this is for personal safety - accuracy matters
 - Keep platform-specific documentation in the appropriate subdirectory
 - Maintain valid Tasker XML format in `.tsk.xml` files
+- Document Mac Desktop Apple Intelligence features where applicable
+- Emphasize iCloud sync setup for Mac-to-iOS workflow
 
 ### Don't
 - Add executable code beyond Tasker XML exports
 - Remove or modify the legal rights audio content without explicit request
 - Add dependencies or build systems
 - Over-engineer - keep it simple for end users
+- Mix Mac Desktop creation and iOS deployment instructions in the same document
 - Mix iOS and Android instructions in the same document
 
 ### When Adding Documentation
@@ -90,7 +99,10 @@ The automation workflow performs these actions when triggered:
 - Include screenshots where helpful
 - Consider users who may be stressed when using this toolkit
 - Test instructions on actual devices when possible
-- Place iOS docs in `doc/ios/` and Android docs in `doc/android/`
+- Place Mac Desktop creation docs in `doc/mac/`
+- Place iOS deployment/trigger docs in `doc/ios/`
+- Place Android docs in `doc/android/`
+- Highlight Mac Desktop advantages (larger screen, Apple Intelligence, better debugging)
 
 ### Audio File Conventions
 - Format: MP3 (compatible with both platforms)
@@ -113,11 +125,31 @@ The automation workflow performs these actions when triggered:
 
 ## Platform-Specific Notes
 
-### iOS (Shortcuts)
-- Requires iOS 15.0+
+### Mac Desktop (Primary Development Platform)
+- Requires macOS 13.0 (Ventura) or later for full Apple Intelligence features
 - Uses built-in Shortcuts app
-- Documentation should include Shortcuts action screenshots
-- Shortcut files cannot be included in repo (must be built manually)
+- **Apple Intelligence Features**:
+  - **Use Model**: Access AI models to optimize shortcut logic and messages
+  - **Writing Tools**: Refine emergency message templates with AI assistance
+  - **Create Image**: Generate visual aids, QR codes, or documentation graphics
+- **Development Advantages**:
+  - Full keyboard and larger screen for complex shortcut building
+  - Better debugging and testing capabilities
+  - iCloud sync automatically deploys to iOS devices
+- Documentation should include Mac Shortcuts app screenshots
+- Shortcut files sync via iCloud (cannot be directly included in repo)
+
+### iOS (Deployment Platform)
+- Requires iOS 15.0+
+- Receives shortcuts via iCloud sync from Mac
+- Uses built-in Shortcuts app
+- **iOS-specific features**:
+  - Back Tap gesture trigger
+  - Siri voice activation
+  - Home screen widgets
+  - Automation triggers based on time/location
+- Documentation focuses on deployment, triggers, and usage (not creation)
+- Required permissions: Location, Camera, Contacts, Notifications
 
 ### Android (Tasker)
 - Requires Android 7.0+

@@ -1,12 +1,15 @@
 # Good Trouble Safety Automation Toolkit
 
-An emergency alert system for iOS and Android that helps keep you safe during encounters by automatically notifying trusted contacts and documenting interactions.
+An emergency alert system for Mac Desktop, iOS, and Android that helps keep you safe during encounters by automatically notifying trusted contacts and documenting interactions.
 
 ## Overview
 
 **Name**: Good Trouble Safety Automation Toolkit
 **Purpose**: Emergency alert system that sends GPS location to trusted contacts
-**Platforms**: iOS (Shortcuts) and Android (Tasker)
+**Platforms**:
+- **Mac Desktop** (primary development platform with Apple Intelligence)
+- **iOS** (deployment via iCloud sync)
+- **Android** (Tasker)
 
 ---
 
@@ -24,15 +27,25 @@ When triggered, the automation workflow:
 
 ## Choose Your Platform
 
-### iOS (iPhone)
+### Mac Desktop + iOS (Recommended)
+
+**Why Mac Desktop First?**
+Build your emergency shortcut on Mac Desktop with Apple Intelligence, then automatically deploy to your iPhone via iCloud sync. This provides a better development experience with AI-powered tools, a larger screen, and easier debugging.
 
 **Requirements:**
-- iPhone with iOS 15.0 or later
-- Shortcuts app (pre-installed)
-- Contacts app with emergency contacts saved
-- Messages app
+- **Mac**: macOS 13.0 (Ventura) or later
+- **iPhone**: iOS 15.0 or later
+- iCloud account with Shortcuts sync enabled
+- Shortcuts app (pre-installed on both platforms)
 
-**Documentation:** See `doc/ios/` for step-by-step build instructions with screenshots.
+**Documentation:**
+- `doc/mac/` - Build the shortcut on Mac Desktop (with Apple Intelligence features)
+- `doc/ios/` - Deploy to iPhone and configure triggers
+
+**Apple Intelligence Features:**
+- **Use Model**: Optimize emergency messages with AI
+- **Writing Tools**: Refine message templates
+- **Create Image**: Generate visual guides or QR codes
 
 ### Android
 
@@ -65,16 +78,19 @@ These audio files work on both iOS and Android platforms.
 
 ```
 .
-├── audio/              # Shared audio files (both platforms)
+├── audio/              # Shared audio files (all platforms)
 ├── doc/
-│   ├── ios/            # iOS Shortcuts guides
+│   ├── mac/            # Mac Desktop shortcut creation (PRIMARY)
+│   ├── ios/            # iOS deployment and trigger setup
 │   └── android/        # Tasker guides
+├── python/             # TTS audio generation tools
 ├── tasker/             # Importable Tasker files for Android
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
-└── SECURITY.md
+├── SECURITY.md
+└── TEST_PLAN.md
 ```
 
 ---
